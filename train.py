@@ -26,9 +26,15 @@ def main():
     train_x = (x_train.values) / 255
     train_y = y_train.values.flatten() 
 
-    x_train, x_dev, y_train, y_dev = train_test_split(train_x, train_y, random_state=42)
+    # x_train, x_valid, y_train, y_valid = train_test_split(train_x, train_y, random_state=42)
 
-    model = MLPClassifier(solver='lbfgs',hidden_layer_sizes=(1000,),  random_state=1) 
+    model = MLPClassifier(hidden_layer_sizes=(1000,), activation='relu', solver='lbfgs', # solver='adam',
+                          alpha=0.0001, batch_size='auto',  learning_rate='constant', learning_rate_init=0.001,
+                          power_t=0.5, max_iter=200, shuffle=True,  random_state=1,
+                          tol=0.0001, verbose=False, warm_start=False, momentum=0.9,
+                          nesterovs_momentum=True, early_stopping=False, validation_fraction=0.1,
+                          beta_1=0.9, beta_2=0.999, epsilon=1e-08, n_iter_no_change=10, max_fun=15000) 
+
     trained_model = model.fit(x_train, y_train)
 
     pickle.dump(trained_model, open(args.save_model_path, 'wb'))
