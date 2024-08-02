@@ -5,7 +5,7 @@ Image Classification
 
 ## Multi Layer Perceptron Classifier
 Scikit-learn
-<br>
+<br></br>
 
 ## Single Layer Perceptron Classifier
 Numpy
