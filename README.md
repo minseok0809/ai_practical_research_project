@@ -7,5 +7,9 @@ Image Classification
 Scikit-learn
 <br>
 
+## Single Layer Perceptron Classifier
+Numpy
+<br>
+
 <br></br>
 
